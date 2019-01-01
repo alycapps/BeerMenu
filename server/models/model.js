@@ -3,12 +3,13 @@ const Schema = mongoose.Schema;
 
 const beerSchema = new Schema({
   breweryName: { type: String, required: true },
-  beerName: { type: String, required: true },
-  style: { type: String, required: true },
-  abv: { type: String, required: false },
-  ibu: { type: String, required: false}
+  beerName: { type: String, required: false },
+  style: { type: String, required: false },
+  abv: { type: Number, required: false },
+  ibu: { type: Number, required: false},
+  inStock: {type: Boolean, required: false}
 });
 
-const Cards = mongoose.model("Beers", beerSchema);
+const Beers = mongoose.model("Beers", beerSchema);
 
-module.exports = Cards;
+module.exports = Beers;

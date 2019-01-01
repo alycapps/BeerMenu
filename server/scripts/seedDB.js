@@ -4996,11 +4996,11 @@ const beerSeed = [
   "IBU": "NA"
   },
   {
-  "Brewery Name": "THREE BLIND MICE",
-  "Beer Name": "FLIGHT OF THE UNICORN v2",
-  "Beer Style": "Nelson Sauvin, Citra & Simcoe IPA",
-  "ABV": "5.0",
-  "IBU": "NA"
+    "Brewery Name": "THREE BLIND MICE",
+    "Beer Name": "FLIGHT OF THE UNICORN v2",
+    "Beer Style": "Nelson Sauvin, Citra & Simcoe IPA",
+    "ABV": "5.0",
+    "IBU": "NA"
   },
   {
   "Brewery Name": "THREE BLIND MICE",
@@ -9311,7 +9311,7 @@ const beerSeed = [
 
 db.Beers
   .remove({})
-  .then(() => db.User.collection.insertMany(beerSeed))
+  .then(() => db.Beers.collection.insertMany(beerSeed))
   .then(data => {
     console.log(data.result.n + " records inserted!");
     process.exit(0);
