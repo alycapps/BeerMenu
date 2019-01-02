@@ -102,6 +102,7 @@ class Admin extends Component {
     .catch(err => console.log(err));
   };
 
+  // function that filters based on dropdown
   filter = (event) => {
     let filterVal = event.target.value;
     let newBeers = this.state.beers;
@@ -111,6 +112,7 @@ class Admin extends Component {
     console.log(this.state.beers)
   };
 
+  // alphabetizes the newBeers array 
   dynamicSort = (property) => {
     var sortOrder = 1;
     if(property[0] === "-") {
