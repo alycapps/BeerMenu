@@ -14,7 +14,6 @@ class Menu extends Component {
 
   componentDidMount() {
     this.loadBeers();
-    this.loadBeers();
   };
 
   // function to load all beers
