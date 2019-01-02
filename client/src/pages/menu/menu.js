@@ -36,9 +36,9 @@ class Menu extends Component {
       <div>
         <br />
         <Grid>
-          {this.state.beers.length ? (
+          {this.state.beers.length > 0 ? (
             <Row>
-              { this.state.beers.map( beer => (
+              { this.state.beers.map( (beer, i) => (
                 <Col md={12}>
                   <Card>
                     <Row>
