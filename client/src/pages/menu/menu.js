@@ -18,11 +18,15 @@ class Menu extends Component {
   loadBeers = () => {
     API.getStock()
       .then(res => {
-        this.setState({ beers: res.data });
-        console.log(this.state)
+        setTimeout(this.updateBeerState.bind(null,res.data), 0);
       })
       .catch(err => console.log(err));
   };
+
+  updateBeerState = (data) => {
+    this.setState({ beers: data });
+    console.log(this.state);
+  }
 
   render() {
     return (
