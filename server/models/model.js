@@ -5,8 +5,8 @@ const beerSchema = new Schema({
   breweryName: { type: String, required: true },
   beerName: { type: String, required: false },
   style: { type: String, required: false },
-  abv: { type: Number, required: false },
-  ibu: { type: Number, required: false},
+  abv: { type: String, required: false },
+  ibu: { type: String, required: false },
   inStock: {type: Boolean, required: false}
 });
 

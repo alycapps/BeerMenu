@@ -22,17 +22,4 @@ class App extends Component {
   }
 }
 
-// const App = () => (
-//   <Router>
-//     <div>
-//       <Nav />
-//       <Switch>
-//         <Route exact path="/" component={Menu} />
-//         <Route exact path="/menu" component={Menu} />
-//         <Route exact path="/admin" component={Admin} />
-//       </Switch>
-//     </div>
-//   </Router>
-// );
-
 export default App;

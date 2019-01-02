@@ -1,9 +1,4 @@
 import React from "react";
-// import Button from "react-bootstrap/lib/Button";
-// import OverlayTrigger from "react-bootstrap/lib/OverlayTrigger";
-// import Popover from "react-bootstrap/lib/Popover";
-// import Tooltip from "react-bootstrap/lib/Tooltip";
-
 
 // Generic modal for popups
 export const Modal = (props) => (
@@ -11,8 +6,6 @@ export const Modal = (props) => (
     <button type="button" className="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
       {props.buttonName}
     </button>
-      
-
     <div className="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div className="modal-dialog" role="document">
         <div className="modal-content">

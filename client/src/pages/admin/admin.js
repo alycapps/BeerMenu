@@ -40,7 +40,6 @@ class Admin extends Component {
 
   // function to add the beer to Mongo
   addBeer = () => {
-    console.log("add beer function ran")
     const beerInfo = {
       breweryName: this.state.breweryName,
       beerName: this.state.beerName, 
@@ -52,12 +51,10 @@ class Admin extends Component {
     API.saveBeer(beerInfo).then(res => {
         console.log(res, "This is the response from beer info");
         if (res.status === 200) {
-          console.log("Beer succesfully added");
           document.getElementById("messageLoc").innerHTML = "Beer succesfully added";
           this.loadBeers();
         }
         else {
-          console.log("There was a problem saving your beer");
           document.getElementById("messageLoc").innerHTML = "There was a problem saving your beer";
         }
     });
