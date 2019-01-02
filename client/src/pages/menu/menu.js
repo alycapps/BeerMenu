@@ -8,6 +8,7 @@ import {Card} from "../../components/Card";
 
 class Menu extends Component {
   state = {
+    loading: true,
     beers: []
   };
 
@@ -18,27 +19,32 @@ class Menu extends Component {
 
   // function to load all beers
   loadBeers = () => {
-    console.log(typeof this.state.beers);
-    console.log(this.state.beers)
-    console.log("typeof above")
     API.getStock()
       .then(res => {
         setTimeout(this.updateBeerState.bind(null,res.data), 0);
+
+        console.log(typeof this.state.beers);
+        console.log(this.state.beers);
+        console.log(this.state.beers.length);
+        console.log("typeof above")
       })
       .catch(err => console.log(err));
   };
 
   updateBeerState = (data) => {
-    this.setState({ beers: data });
+    this.setState({ beers: data, loading: false });
     console.log(this.state);
   }
 
   render() {
+    if(this.state.loading) {
+      return 'Loading...'
+    }
     return (
       <div>
         <br />
         <Grid>
-          { this.state.beers && this.state.beers.length > 0 ? (
+          { (this.state.beers && this.state.beers.length > 0) ? (
             <Row>
               { this.state.beers.map( (beer, i) => (
                 <Col md={12}>
