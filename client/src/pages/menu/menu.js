@@ -1,4 +1,5 @@
 import React, {Component} from "react";
+import { withRouter } from 'react-router-dom';
 import API from "../../utils/API"
 import Grid from "react-bootstrap/lib/Grid";
 import Row from "react-bootstrap/lib/Row";
@@ -72,4 +73,4 @@ class Menu extends Component {
   }
 }
 
-export default Menu;
+export default withRouter(Menu);
