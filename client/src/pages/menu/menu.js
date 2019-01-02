@@ -21,24 +21,22 @@ class Menu extends Component {
     API.getStock()
       .then(res => {
         setTimeout(this.updateBeerState.bind(null,res.data), 0);
-
-        console.log(typeof this.state.beers);
-        console.log(this.state.beers);
-        console.log(this.state.beers.length);
-        console.log("typeof above")
       })
       .catch(err => console.log(err));
   };
 
+  // function to actually update the state
   updateBeerState = (data) => {
     this.setState({ beers: data, loading: false });
     console.log(this.state);
   }
 
   render() {
+    // allows for better user experience on initial page load
     if(this.state.loading) {
       return 'Loading...'
     }
+    // actual functionality
     return (
       <div>
         <br />

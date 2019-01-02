@@ -23,6 +23,7 @@ export const Modal = (props) => (
             </button>
           </div>
           <div className="modal-body">
+            <p id="messageLoc" style={{color:"red"}}></p>
             <form id="inputLoc">
               <label htmlFor="breweryName">Brewery Name: </label>
               <input

@@ -36,7 +36,6 @@ class Admin extends Component {
     this.setState({
       [name]: value
     });
-    console.log(this.state);
   };
 
   // function to add the beer to Mongo
@@ -54,10 +53,12 @@ class Admin extends Component {
         console.log(res, "This is the response from beer info");
         if (res.status === 200) {
           console.log("Beer succesfully added");
+          document.getElementById("messageLoc").innerHTML = "Beer succesfully added";
           this.loadBeers();
         }
         else {
           console.log("There was a problem saving your beer");
+          document.getElementById("messageLoc").innerHTML = "There was a problem saving your beer";
         }
     });
   };
@@ -130,9 +131,11 @@ class Admin extends Component {
   };
 
   render() {
+    // allows for better user experience on initial page load
     if(this.state.loading) {
       return 'Loading...'
     }
+    // actual functionality
     return (
       <div>
         <br />
