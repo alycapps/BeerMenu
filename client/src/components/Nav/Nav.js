@@ -12,8 +12,8 @@ class Nav extends React.Component {
         </div>
         <div className="col-md-4"></div>
         <div className="col-md-4">
-          <a href="/beer/menu" className="navbar-brand">Menu</a>
-          <a href="/beer/admin" className="navbar-brand">Admin</a>
+          <a href="/menu" className="navbar-brand">Menu</a>
+          <a href="/admin" className="navbar-brand">Admin</a>
         </div>
       </nav>
     )
