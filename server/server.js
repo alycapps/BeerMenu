@@ -46,6 +46,7 @@ app.use(function(err, req, res, next) {
 });
 
 // Starting Server
-app.listen(PORT, () => {
-  console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`);
+app.listen(PORT, '0.0.0.0', (err) => {
+	console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`);
+	console.error(err);
 });
