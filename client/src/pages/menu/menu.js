@@ -17,9 +17,10 @@ class Menu extends Component {
   // function to load all beers
   loadBeers = () => {
     API.getStock()
-      .then(res =>
-        this.setState({ beers: res.data, inStock: "", breweryName: "", beerName: "", ibu: "", abv: "" }),
-        )
+      .then(res => {
+        this.setState({ beers: res.data });
+        console.log(this.state)
+      })
       .catch(err => console.log(err));
   };
 
