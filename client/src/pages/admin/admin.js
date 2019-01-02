@@ -11,6 +11,7 @@ import {Card} from "../../components/Card";
 
 class Admin extends Component {
   state = {
+    loading: true,
     beers: [],
     inStock: ""
   };
@@ -23,7 +24,7 @@ class Admin extends Component {
   loadBeers = () => {
     API.getBeers()
       .then(res =>
-        this.setState({ beers: res.data }),
+        this.setState({ beers: res.data, loading: false }),
         console.log(this.state.beers)
         )
       .catch(err => console.log(err));
@@ -129,6 +130,9 @@ class Admin extends Component {
   };
 
   render() {
+    if(this.state.loading) {
+      return 'Loading...'
+    }
     return (
       <div>
         <br />
