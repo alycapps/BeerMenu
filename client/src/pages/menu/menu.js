@@ -13,11 +13,13 @@ class Menu extends Component {
 
   componentDidMount() {
     this.loadBeers();
+    this.loadBeers();
   };
 
   // function to load all beers
   loadBeers = () => {
     console.log(typeof this.state.beers);
+    console.log(this.state.beers)
     console.log("typeof above")
     API.getStock()
       .then(res => {
@@ -36,7 +38,7 @@ class Menu extends Component {
       <div>
         <br />
         <Grid>
-          {this.state.beers.length > 0 ? (
+          { this.state.beers && this.state.beers.length > 0 ? (
             <Row>
               { this.state.beers.map( (beer, i) => (
                 <Col md={12}>
