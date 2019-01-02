@@ -16,6 +16,8 @@ class Menu extends Component {
 
   // function to load all beers
   loadBeers = () => {
+    console.log(typeof this.state.beers);
+    console.log("typeof above")
     API.getStock()
       .then(res => {
         setTimeout(this.updateBeerState.bind(null,res.data), 0);
