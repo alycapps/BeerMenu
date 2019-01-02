@@ -5,6 +5,10 @@ export default {
   getBeers: function() {
     return axios.get("/api/beers");
   },
+  // Gets stock
+  getStock: function() {
+    return axios.get("/api/beers/stock");
+  },
   // Gets the beer with the given id
   getBeer: function(id) {
     return axios.get("/api/beers/" + id);

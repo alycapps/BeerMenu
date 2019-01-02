@@ -13,4 +13,9 @@ router
   .put(Controller.update)
   .delete(Controller.remove);
 
+// Matches with "/api/beers/stock"
+router
+  .route("/stock")
+  .get(Controller.findStock)
+
 module.exports = router;

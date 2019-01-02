@@ -7,6 +7,12 @@ module.exports = {
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
+  findStock: function(req, res) {
+    db.Beers
+      .find({inStock: 'true'})
+      .then(dbModel => res.json(dbModel))
+      .catch(err => res.status(422).json(err));
+  },
   create: function(req, res) {
     db.Beers
       .create(req.body)

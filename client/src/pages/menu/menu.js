@@ -14,11 +14,11 @@ class Menu extends Component {
     this.loadBeers();
   };
 
+  // function to load all beers
   loadBeers = () => {
-    API.getBeers()
+    API.getStock()
       .then(res =>
-        this.setState({ beers: res.data, breweryName: "", beerName: "", ibu: "", abv: "" }),
-        console.log(this.state.cards)
+        this.setState({ beers: res.data, inStock: "", breweryName: "", beerName: "", ibu: "", abv: "" }),
         )
       .catch(err => console.log(err));
   };
@@ -28,10 +28,15 @@ class Menu extends Component {
       <div>
         <br />
         <Grid>
-        {this.state.beers.length ? (
-          <Row>
-            {/* Details for each Beer added to card */}
+          {this.state.beers.length ? (
+            <Row>
+              {/* Details for each Beer added to card */}
               { this.state.beers.map( beer => (
+
+                // { {beer.inStock}? ( console.log("yes")) : (console.log("no")) }  
+                // switch ( {beer.inStock} ) {
+
+                // }
                 <Col md={12}>
                   <Card>
                     <Row>
@@ -56,10 +61,9 @@ class Menu extends Component {
                   </Card>
                 </Col>
               ))}
-              </Row>
-
-            ) : (
-              <h3> No Beers Listed -- Please check with the Bartender. </h3>
+            </Row>
+          ) : (
+            <h3> No Beers Listed -- Please check with the Bartender. </h3>
           )}
         </Grid>
       </div>
