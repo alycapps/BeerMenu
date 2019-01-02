@@ -35,13 +35,7 @@ class Menu extends Component {
         <Grid>
           {this.state.beers.length ? (
             <Row>
-              {/* Details for each Beer added to card */}
               { this.state.beers.map( beer => (
-
-                // { {beer.inStock}? ( console.log("yes")) : (console.log("no")) }  
-                // switch ( {beer.inStock} ) {
-
-                // }
                 <Col md={12}>
                   <Card>
                     <Row>

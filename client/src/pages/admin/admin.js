@@ -192,7 +192,6 @@ class Admin extends Component {
 
             {/* Beer Card Templates */}
             <Row>
-              {/* Details for each Beer added to card */}
                 { this.state.beers.map( beer => (
                   <Col md={12}>
                     <Card>
