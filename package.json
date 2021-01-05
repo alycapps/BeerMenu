@@ -24,7 +24,7 @@
     "nodemon": "^1.11.0"
   },
   "dependencies": {
-    "axios": "^0.18.0",
+    "axios": "^0.21.1",
     "babel": "^6.23.0",
     "connect-mongo": "^2.0.3",
     "dotenv": "^6.2.0",
